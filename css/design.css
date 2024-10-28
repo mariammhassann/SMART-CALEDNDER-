@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8c3f42b; 
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.calendar-container {
+    width: 600px; 
+    background-color: #e8c3f42b; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.calendar-header h2 {
+    color: #333;
+    font-size: 24px; 
+}
+
+
+button {
+    background-color: #e0e0ea; 
+    border: none;
+    color: #333;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #dfdfe9; 
+}
+
+
+button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+}
+
+
+.day {
+    background-color: #c48ef6b3; 
+    padding: 15px; 
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #333;
+}
+
+
+.day-cell {
+    padding: 25px; 
+    text-align: center;
+    background-color: #dfdfe9;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease, transform 0.2s ease; 
+
+}
+
+.day-cell:hover {
+    background-color: #cf7af7; 
+    transform: scale(1.1); 
+    cursor: pointer; 
+    
+    
+}
+
+
+.day-cell.inactive {
+    background-color: #f5f6fb;
+    color: #b3b3b3;
+}
+
+
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.search-form input {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-top: 50px;
+}
+
+.search-form button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(81, 19, 107); 
+    text-align: center;
+    text-decoration: none; 
+    border: none;
+    border-radius: 10px; 
+    transition: background-color 0.4s ease, transform 0.2s ease; 
+    margin-top: 50px;
+
+}
+
+.search-form button:hover {
+    background-color: #673c7b; 
+    transform: scale(1.05); 
+    cursor: pointer; 
+    
+}
+
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.day-cell.highlighted {
+    background-color: #f0ad4e; 
+    color: white;
+}
+
+.task-link {
+    margin: 20px; 
+}
+
+.new-task{
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(81, 19, 107); 
+    text-align: center;
+    text-decoration: none; 
+    border: none;
+    border-radius: 10px; 
+    transition: background-color 0.4s ease, transform 0.2s ease; 
+    margin-left: 250px;
+    margin-bottom: 30px;
+    }
+    
+    
+    .new-task:hover {
+        background-color: #673c7b; 
+        transform: scale(1.05); 
+        cursor: pointer; 
+    }
