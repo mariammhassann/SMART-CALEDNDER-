@@ -1,35 +1,39 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #e8c3f42b; 
-    padding: 0;
+    background-color: #f5f6fb; 
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-
 .calendar-container {
-    width: 600px; 
-    background-color: #e8c3f42b; 
+    width: 90%; 
+    height: 90%;
+    max-width: 1200px;
+    max-height: 1000px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; 
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
+    position: relative;
 }
-
 
 .calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .calendar-header h2 {
     color: #333;
     font-size: 24px; 
+    margin: 0;
 }
-
 
 button {
     background-color: #e0e0ea; 
@@ -45,95 +49,90 @@ button:hover {
     background-color: #dfdfe9; 
 }
 
-
 button a {
     text-decoration: none;
     color: inherit;
 }
 
-
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-gap: 10px;
+    grid-template-rows: auto;
+    gap: 5px;
+    flex-grow: 1;
 }
 
-
 .day {
-    background-color: #c48ef6b3; 
-    padding: 15px; 
+    background-color: #e1e1eb; 
+    padding: 10px; 
     text-align: center;
     font-weight: bold;
     border-radius: 5px;
     color: #333;
+    font-size: calc(1.2rem + 0.5vw);
 }
 
-
 .day-cell {
-    padding: 25px; 
+    padding: 20px; 
     text-align: center;
     background-color: #dfdfe9;
     color: #333;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.4s ease, transform 0.2s ease; 
-
+    font-size: calc(1rem + 0.3vw);
 }
 
 .day-cell:hover {
     background-color: #cf7af7; 
-    transform: scale(1.1); 
-    cursor: pointer; 
-    
-    
 }
-
 
 .day-cell.inactive {
     background-color: #f5f6fb;
     color: #b3b3b3;
 }
 
+.day-cell.highlighted {
+    background-color: #f0ad4e; 
+    color: white;
+}
 
+.day-cell.searched {
+    background-color: #ffdd44;
+    color: black;
+}
+
+.day-cell.searched:hover {
+    background-color: #ffdd44;
+}
 
 .search-form {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-    margin-top: 50px;
 }
 
 .search-form input {
-    padding: 8px;
-    width: 200px;
+    padding: 10px;
+    width: 20%;
+    min-width: 200px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-right: 20px;
-    margin-top: 50px;
+    font-size: 1rem;
 }
 
 .search-form button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: rgb(81, 19, 107); 
-    text-align: center;
-    text-decoration: none; 
+    padding: 10px;
+    background-color: #e0e0ea;
     border: none;
-    border-radius: 10px; 
-    transition: background-color 0.4s ease, transform 0.2s ease; 
-    margin-top: 50px;
-
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 1rem;
 }
 
 .search-form button:hover {
-    background-color: #673c7b; 
-    transform: scale(1.05); 
-    cursor: pointer; 
-    
+    background-color: #dedee8; 
 }
-
 
 .error {
     color: red;
@@ -141,34 +140,92 @@ button a {
     margin-top: 10px;
 }
 
-
-.day-cell.highlighted {
-    background-color: #f0ad4e; 
-    color: white;
-}
-
-.task-link {
-    margin: 20px; 
-}
-
-.new-task{
-    display: inline-block;
-    padding: 15px 20px;
-    font-size: 20px;
-    color: white;
-    background-color: rgb(81, 19, 107); 
+.new-task {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #000;
+    background-color: #ccc; 
     text-align: center;
     text-decoration: none; 
     border: none;
-    border-radius: 10px; 
-    transition: background-color 0.4s ease, transform 0.2s ease; 
-    margin-left: 250px;
-    margin-bottom: 30px;
+    border-radius: 5px; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.new-task:hover {
+    background-color: #cf7af7; 
+    transform: scale(1.05); 
+    cursor: pointer; 
+}
+
+
+@media (max-width: 768px) {
+    .calendar-container {
+        width: 95%;
+        height: auto;
+        max-height: none;
+        padding: 15px;
+        border-radius: 0;
+        box-shadow: none;
     }
-    
-    
-    .new-task:hover {
-        background-color: #673c7b; 
-        transform: scale(1.05); 
-        cursor: pointer; 
+
+    .calendar-header h2 {
+        font-size: 18px;
     }
+
+    .calendar-grid {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2px;
+    }
+
+    .day,
+    .day-cell {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .day-cell.highlighted {
+        font-size: 1rem;
+    }
+
+    .search-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-form input,
+    .search-form button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .new-task {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-header h2 {
+        font-size: 16px;
+    }
+
+    .day,
+    .day-cell {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .new-task {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .search-form input,
+    .search-form button {
+        font-size: 0.8rem;
+    }
+}
