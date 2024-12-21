@@ -1,6 +1,6 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,81 +9,85 @@ body {
     height: 100vh;
 }
 
-/* Task Container */
-.task-container {
-    background: #ffffff4e;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(70, 8, 112, 0.54);
-    padding: 20px;
-    width: 500px;
-    text-align: center;
-}
 
+.task-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 400px; 
+    text-align: center;
+    max-width: 90%; 
+}
 
 h2 {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     color: #333;
+    font-size: 24px; 
 }
-
 
 input[type="text"],
 input[type="date"],
 input[type="time"],
 textarea {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #270b32;
+    width: 100%;
+    padding: 12px; 
+    margin: 12px 0;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 16px; 
 }
-
-
 textarea {
-    resize: none; 
+    resize: none;
 }
 
-
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     .task-container {
-        width: 90%;
+        width: 95%;
     }
 }
-.task-link {
-    margin: 20px; 
-}
 
 
-.back-to{
+.back-to {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 16px;
-    color: rgb(0, 0, 0);
-    background-color: #ccc; 
+    color: #000;
+    background-color: #ccc;
     text-align: center;
-    text-decoration: none; 
+    text-decoration: none;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease; 
-}
-.back-to:hover{
-    background-color: #cf7af7; 
-    transform: scale(1.05); 
-    cursor: pointer; 
-}
-.add-task{
-    background-color: #ccc; 
-    color: rgb(0, 0, 0);              
-    border: none;               
-    border-radius: 5px;        
-    padding: 10px 20px;        
-    font-size: 16px;           
-    cursor: pointer;            
-    transition: background-color 0.3s, transform 0.3s; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.add-task:hover{
+.back-to:hover {
+    background-color: #cf7af7;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+.add-task {
+    background-color: #ccc;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-task:hover {
     background-color: #f0ad4e;
-    transform: scale(1.05); 
-    cursor: pointer; 
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+p {
+    color: green;
+    margin-top: 10px;
+    font-size: 16px;
 }
