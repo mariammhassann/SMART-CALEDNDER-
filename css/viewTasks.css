@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f6fb;
+    margin: 0;
+    padding: 0;
+}
+
+.task-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+}
+
+.task-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.task-table th, .task-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.task-table th {
+    background-color: #f7f7f7;
+    font-size: 18px;
+}
+
+.task-table td {
+    font-size: 16px;
+}
+
+.task-table a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.task-table a:hover {
+    text-decoration: underline;
+}
+
+.new-task, .back-to-calendar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.new-task:hover, .back-to-calendar:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
