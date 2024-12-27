@@ -1,0 +1,105 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Full-Page Container */
+.container {
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+    background: linear-gradient(135deg, #e9ecef, #f4f4f4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Heading */
+h1 {
+    margin-bottom: 20px;
+    color: #444;
+    font-size: 28px;
+}
+
+/* Notification List */
+.notification-list {
+    width: 200%;
+    max-width: 850px;
+    height: 65vh;
+    overflow-y: auto; /* Scroll for long lists */
+    border-radius: 8px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Notification Item */
+.notification-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover Effect */
+.notification-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Notification Message */
+.notification-message {
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+}
+
+/* Notification Date */
+.notification-date {
+    font-size: 14px;
+    color: #888;
+}
+
+/* No Notifications Message */
+.no-notifications {
+    color: #888;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Back Button */
+.back-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #7e42ac;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-button:hover {
+    background-color: #574b90;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .notification-list {
+        height: 50vh;
+    }
+}
