@@ -6,11 +6,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
 }
 
 .calendar-container {
     width: 90%; 
-    height: 90%;
+    height: auto;
     max-width: 1200px;
     max-height: 1000px;
     display: flex;
@@ -20,6 +21,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     position: relative;
+    margin-bottom: 20px; /* Space below the calendar */
 }
 
 .calendar-header {
@@ -80,10 +82,11 @@ button a {
     border-radius: 5px;
     cursor: pointer;
     font-size: calc(1rem + 0.3vw);
+    transition: background-color 0.2s ease;
 }
 
 .day-cell:hover {
-    background-color: #cf7af7; 
+    background-color: #d07df736; 
 }
 
 .day-cell.inactive {
@@ -92,7 +95,7 @@ button a {
 }
 
 .day-cell.highlighted {
-    background-color: #f0ad4e; 
+    background-color: #362610; 
     color: white;
 }
 
@@ -118,6 +121,11 @@ button a {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.search-form input:focus {
+    border-color: #007bff;
 }
 
 .search-form button {
@@ -128,6 +136,7 @@ button a {
     cursor: pointer;
     margin-left: 10px;
     font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
 .search-form button:hover {
@@ -139,28 +148,29 @@ button a {
     text-align: center;
     margin-top: 10px;
 }
-
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
 .new-task {
-    position: absolute;
-    top: 20px;
-    right: 20px;
     padding: 10px 20px;
     font-size: 16px;
     color: #000;
-    background-color: #ccc; 
+    background-color: #ccc;
     text-align: center;
-    text-decoration: none; 
+    text-decoration: none;
     border: none;
-    border-radius: 5px; 
-    transition: background-color 0.3s ease, transform 0.2s ease; 
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .new-task:hover {
-    background-color: #cf7af7; 
+    background-color: #d07af795; 
     transform: scale(1.05); 
     cursor: pointer; 
 }
-
 
 @media (max-width: 768px) {
     .calendar-container {
@@ -202,6 +212,9 @@ button a {
         margin-bottom: 10px;
     }
 
+    .button-container {
+        flex-direction: column;
+    }
     .new-task {
         font-size: 14px;
         padding: 8px 12px;
@@ -222,6 +235,9 @@ button a {
     .new-task {
         font-size: 12px;
         padding: 6px 10px;
+    }
+    .button-container {
+        flex-direction: column;
     }
 
     .search-form input,
